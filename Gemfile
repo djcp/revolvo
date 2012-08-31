@@ -39,6 +39,7 @@ group :development, :test do
   gem 'guard-spork'
   gem 'rspec-rails', '~> 2.9.0'
   gem 'sham_rack'
+  gem 'factory_girl_rails'
 end
 
 group :test do
