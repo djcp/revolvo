@@ -11,11 +11,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120831174349) do
+ActiveRecord::Schema.define(:version => 20120831184330) do
+
+  create_table "feed_items", :force => true do |t|
+    t.string   "link"
+    t.string   "title"
+    t.string   "summary"
+    t.string   "content"
+    t.string   "author"
+    t.string   "contributor"
+    t.string   "rights"
+    t.string   "guid"
+    t.datetime "updated"
+    t.datetime "published"
+    t.integer  "feed_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "feeds", :force => true do |t|
-    t.string "title"
-    t.string "rss_url"
+    t.string   "title"
+    t.string   "subtitle"
+    t.string   "description"
+    t.string   "language"
+    t.string   "link"
+    t.string   "rss_url"
+    t.string   "generator"
+    t.string   "author"
+    t.string   "icon"
+    t.string   "logo"
+    t.string   "rights"
+    t.datetime "updated"
+    t.string   "guid"
+    t.datetime "next_update_at", :default => '2012-09-14 20:58:28'
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
   end
 
   create_table "users", :force => true do |t|

@@ -1,4 +1,5 @@
 Revolvo::Application.routes.draw do
-  root :to => 'Clearance::Sessions#new'
+  resources :feed_items
+  root :to => 'FeedItems#index'
 
 end

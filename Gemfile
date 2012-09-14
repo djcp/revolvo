@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
 gem 'rails', '3.2.6'
 
 # Bundle edge Rails instead:
@@ -28,7 +29,10 @@ gem 'paperclip'
 gem 'formtastic'
 gem 'flutie'
 gem 'bourbon'
+gem 'neat'
 gem 'airbrake'
+gem 'backbone-support'
+gem 'feed-abstract'
 
 group :development do
   gem 'foreman'
@@ -51,6 +55,7 @@ group :test do
   gem 'timecop'
   gem 'shoulda-matchers'
   gem 'launchy'
+  gem 'simplecov', require: false
 end
 
 group :staging, :production do

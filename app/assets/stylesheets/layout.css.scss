@@ -1,0 +1,30 @@
+div.container {
+  @include outer-container;
+}
+
+#flashes{
+  @include span-columns(12);
+}
+
+header{
+  @include span-columns(6);
+
+}
+
+.sign_in{
+  @include omega;
+}
+
+div.content{
+  @include span-columns(12);
+
+  #feed_list {
+    @include span-columns(3);
+    border-right: 4px solid #ccc;
+  } 
+
+  #feed_items {
+    @include span-columns(9);
+  }
+}
+

@@ -8,15 +8,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
-  <header>
-    <% if signed_in? -%>
-      <%= link_to "Sign out", sign_out_path, :method => :delete %>
-    <% else -%>
-      <%= link_to "Sign in", sign_in_path %>
-    <% end -%>
-  </header>
-  <%= render 'flashes' -%>
-  <%= yield %>
-  <%= render 'javascript' %>
+  <div class="container">
+    <header>
+      <h1>Revolvo</h1>
+    </header>
+    <header class="sign_in">
+      <% if signed_in? -%>
+        <%= link_to "Sign out", sign_out_path, :method => :delete %>
+      <% else -%>
+        <%= link_to "Sign in", sign_in_path %>
+      <% end -%>
+    </header>
+    <%= render 'flashes' -%>
+    <div class="content">
+      <div id="feed_list">
+        <%= yield :feed_list %>
+      </div>
+      <div id="feed_items">
+        <%= yield %>
+      </div>
+    </div>
+    <%= render 'javascript' %>
+  </div>
 </body>
 </html>

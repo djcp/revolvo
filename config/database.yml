@@ -1,7 +1,6 @@
 development: &default
   adapter: postgresql
   database: revolvo_development
-  host: localhost
   user: djcp
   pool: 5
   timeout: 5000
