@@ -12,9 +12,9 @@ class Feed < ActiveRecord::Base
 
 
   def update_feed_items
-    parsed_feed = FeedAbstract::Feed.new(SpiderExternalContent.new(rss_url).body.to_s)
+    parsed_feed = FeedAbstract::Feed.new(SpiderExternalContent.new(rss_url).to_s)
     parsed_feed.items.each do|feed_item|
-      fi = FeedItem.find_or_initialize_by_url_and_feed_id(feed_item.link, id)
+      fi = FeedItem.find_or_initialize_by_link_and_feed_id(feed_item.link, id)
       fi.attributes = {
         title: feed_item.title, 
         content: feed_item.content, 

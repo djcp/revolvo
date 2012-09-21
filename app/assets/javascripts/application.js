@@ -16,6 +16,8 @@
 //= require underscore
 //= require backbone
 //= require backbone-support
+//= require revolvo
+//= require_tree ../templates
 //= require_tree ./utils
 //= require_tree ./models
 //= require_tree ./collections

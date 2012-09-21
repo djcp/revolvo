@@ -1,1 +1,9 @@
+<h2>Welcome</h2>
+<div id="feed_items">
+</div>
 
+<%= content_for :javascript do -%>
+  <%= javascript_tag do %>
+    Revolvo.initialize({ feed_items: <%== @feed_items.to_json %> } );
+  <% end %>
+<% end %>

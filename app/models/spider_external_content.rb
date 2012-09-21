@@ -14,7 +14,8 @@ class SpiderExternalContent
 
     req = Net::HTTP::Get.new(uri.request_uri + ((uri.fragment.blank?) ? '' : '#' + uri.fragment ))
     req.initialize_http_header({"User-Agent" => 'MongoCrawl'})
-    http.request(req)
+    response = http.request(req)
+    response.body
   end
 
 end

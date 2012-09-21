@@ -3,8 +3,8 @@ class CreateFeedItems < ActiveRecord::Migration
     create_table :feed_items do |t|
       t.column :link, :string
       t.column :title, :string
-      t.column :summary, :string
-      t.column :content, :string
+      t.column :summary, :string, limit: 2.megabytes
+      t.column :content, :string, limit: 2.megabytes
       t.column :author, :string
       t.column :contributor, :string
       t.column :rights, :string
