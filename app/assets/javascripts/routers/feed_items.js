@@ -5,8 +5,11 @@ var FeedItemRouter = Backbone.Router.extend({
   },
   show: function(){
   },
+  initialize: function(data){
+    this.collection = data.feed_items;
+  },
   index: function(){
-    var view = new FeedItemsIndexView({ collection: FeedItems });
+    var view = new FeedItemsIndexView({ collection: this.collection });
     $('#feed_items').html(view.render().$el);
   }
 });
